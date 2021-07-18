@@ -1,0 +1,54 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &7857528724131536512
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7857528724131536515}
+  - component: {fileID: 7857528724131536514}
+  m_Layer: 0
+  m_Name: LevelGenerator
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7857528724131536515
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7857528724131536512}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7857528724131536514
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7857528724131536512}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b475cdd28c0a6f47a75dcfdea1c2546, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chanceWalkerChangeDir: 0.15
+  chanceWalkerSpawn: 0.1
+  chanceWalkerDestoy: 0.05
+  maxWalkers: 10
+  percentToFill: 0.7
+  ground: {fileID: 6803985819862611140, guid: 8f03043772eae0f49b8cb0319e4d3836, type: 3}
+  vertical: {fileID: 3217887462603616062, guid: ec54c68f1e7459643ad1e9c589000b01, type: 3}
+  horizontal: {fileID: 6659565223065758277, guid: 7b6e9392e016388469280fc92ba94038, type: 3}
+  corner: {fileID: 7545184605325239768, guid: 2f72ec8ed3a4b2e4a9ba7bed476ee0f3, type: 3}
