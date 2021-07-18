@@ -13,12 +13,12 @@ public class Hull : Module, IAttacable
 
     public float maxHP;
     public float currentHP;
-    public SpriteRenderer SpriteRenderer;
+
+    public SpriteRenderer spriteRenderer;
 
     public void Start()
     {
-        HullData t = (HullData)AssetDatabase.LoadAssetAtPath("Assets/Prefabs/Modules/Hulls/HullData1.asset", typeof(HullData));
-        print(t.Name);
+        HullData t = (HullData)AssetDatabase.LoadAssetAtPath("Assets/Prefabs/ModulesData/BlueTeam/Hulls/HullData1.asset", typeof(HullData));
         Equip(t);
     }
 
@@ -31,7 +31,7 @@ public class Hull : Module, IAttacable
 
             speed = hullData.Speed;
             maxHP = currentHP = hullData.MaxHP;
-            SpriteRenderer.sprite = hullData.Sprite;
+            spriteRenderer.sprite = hullData.Sprite;
         }
         else
         {

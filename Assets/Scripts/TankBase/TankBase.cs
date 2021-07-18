@@ -2,17 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TankBase : MonoBehaviour
+public abstract class TankBase : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public Teams team;
+
+    public void SpawnTank()
     {
-        
+
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

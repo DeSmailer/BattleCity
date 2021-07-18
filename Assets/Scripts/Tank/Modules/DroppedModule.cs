@@ -11,11 +11,14 @@ public class DroppedModule : MonoBehaviour, IPickUp
     {
         spriteRenderer.sprite = moduleData.Sprite;
         name = moduleData.Name;
+        moduleType = moduleData.ModuleType;
+
     }
 
-    public ModuleData PickUp(string team)
+    public ModuleData PickUp(Teams team)
     {
+        print(name);
         moduleType.ToString();
-        return (ModuleData)AssetDatabase.LoadAssetAtPath("Assets/Prefabs/Modules/Hulls/HullData1.asset", typeof(ModuleData));
+        return (ModuleData)AssetDatabase.LoadAssetAtPath($"Assets/Prefabs/ModulesData/{team}Team/{moduleType}s/{name}.asset", typeof(ModuleData));
     }
 }

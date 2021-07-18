@@ -1,12 +1,32 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 public class Tower : Module
 {
+    public float shotAccuracy;
+
+    public SpriteRenderer spriteRenderer;
+    public void Start()
+    {
+        TowerData t = (TowerData)AssetDatabase.LoadAssetAtPath("Assets/Prefabs/ModulesData/BlueTeam/Towers/TowerData2.asset", typeof(TowerData));
+        Equip(t);
+    }
     public override void Equip(ModuleData moduleData)
     {
-        throw new System.NotImplementedException();
+        if (moduleData is TowerData)
+        {
+            this.moduleData = moduleData;
+            TowerData towerData = (TowerData)moduleData;
+
+            shotAccuracy = towerData.ShotAccuracy;
+            spriteRenderer.sprite = towerData.Sprite;
+        }
+        else
+        {
+            print("ошибочка");
+        }
     }
 
     private void Update()

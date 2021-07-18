@@ -22,23 +22,29 @@ public class Tank : MonoBehaviour
             IPickUp equipament = hitCollider.GetComponent(typeof(IPickUp)) as IPickUp;
             if (equipament != null)
             {
-                print("поднял" + equipament.PickUp("red"));
-                var qwe = equipament.PickUp("red");
-                switch (qwe.ModuleType)
-                {
-                    case ModulesTypes.Hull:
-                        hull.Equip(equipament.PickUp("red"));
-                        break;
+                print("поднял" + equipament.PickUp(team));
 
-                    case ModulesTypes.Tower:
-                        hull.Equip(equipament.PickUp("red"));
-                        break;
-
-                    case ModulesTypes.Cannon:
-                        hull.Equip(equipament.PickUp("red"));
-                        break;
-                }
+                ModuleData module = equipament.PickUp(team);
+                Equip(module);
             }
+        }
+    }
+
+    public void Equip(ModuleData module)
+    {
+        switch (module.ModuleType)
+        {
+            case ModulesTypes.Hull:
+                hull.Equip(module);
+                break;
+
+            case ModulesTypes.Tower:
+                tower.Equip(module);
+                break;
+
+            case ModulesTypes.Cannon:
+                cannon.Equip(module);
+                break;
         }
     }
 

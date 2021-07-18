@@ -10,9 +10,12 @@ public class ModuleData : ScriptableObject
     private Sprite sprite;
     [SerializeField]
     private ModulesTypes moduleType;
+    [SerializeField]
+    private Teams team;
 
     public string Name => this.name;
     public int Level => level;
     public Sprite Sprite => sprite;
     public ModulesTypes ModuleType => moduleType;
+    public Teams Team => team;
 }

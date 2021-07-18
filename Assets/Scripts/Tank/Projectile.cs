@@ -10,7 +10,7 @@ public class Projectile : MonoBehaviour
 
     private void Start()
     {
-        direction = Vector3.right;
+        direction = Vector3.left;
     }
 
     private void Update()
@@ -21,6 +21,6 @@ public class Projectile : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
             print("столкнулись");
-            Destroy(this.gameObject);
+            //Destroy(this.gameObject);
     }
 }

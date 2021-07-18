@@ -4,5 +4,5 @@ using UnityEngine;
 
 public interface IPickUp
 {
-    public ModuleData PickUp(string team);
+    public ModuleData PickUp(Teams team);
 }
