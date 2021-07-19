@@ -133,7 +133,7 @@ GameObject:
   - component: {fileID: 1342770501138537252}
   - component: {fileID: 3779819651170508043}
   - component: {fileID: 6005088067982544433}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: BlueBase
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -233,7 +233,9 @@ MonoBehaviour:
   currentHP: 0
   checkRadius: 0.45
   randomEquipmentManager: {fileID: 3779819651170508043}
+  tanksOnTheField: 0
   playerPref: {fileID: 3236808966907593037, guid: 44599154125e44c43bd71d3ddc7398cd, type: 3}
+  mobPref: {fileID: 7380323606072234643, guid: 45d9082d8359dd04094306d5fb81aaa1, type: 3}
 --- !u!114 &3779819651170508043
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -297,7 +299,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8017414421249451605}
   - component: {fileID: 8017414421249451604}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: flag_friend_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5440075675250890838}
   - component: {fileID: 2511773227615878211}
   - component: {fileID: 9182068638102271316}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: stone_horizontal 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -107,5 +107,5 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.65, y: 0.77}
+  m_Size: {x: 1.6, y: 0.91}
   m_EdgeRadius: 0

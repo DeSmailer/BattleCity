@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6659565223065758278}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: StoneHorizontal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -42,7 +42,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6659565223234300230}
   - component: {fileID: 6659565223234300231}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Ground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -180,6 +180,10 @@ PrefabInstance:
     - target: {fileID: 5440075675250890838, guid: c58c0a4583c371b4d8abf92390be0dd5, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9182068638102271316, guid: c58c0a4583c371b4d8abf92390be0dd5, type: 3}
+      propertyPath: m_Size.y
+      value: 0.72
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c58c0a4583c371b4d8abf92390be0dd5, type: 3}

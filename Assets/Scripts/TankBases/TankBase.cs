@@ -21,6 +21,8 @@ public abstract class TankBase : MonoBehaviour, IAttacable
 
     public RandomEquipmentManager randomEquipmentManager;
 
+    public int tanksOnTheField;
+
     public void Start()
     {
         currentHP = maxHP;
@@ -50,6 +52,7 @@ public abstract class TankBase : MonoBehaviour, IAttacable
     public void ReduceNumberOfAvailableUnits()
     {
         unitsLeft--;
+        IncreaseTanksOnTheField();
     }
 
     private void OnDrawGizmos()
@@ -69,5 +72,13 @@ public abstract class TankBase : MonoBehaviour, IAttacable
     public Teams GetTeam()
     {
         return team;
+    }
+    public void ReduceTanksOnTheField()
+    {
+        tanksOnTheField--;
+    }
+    public void IncreaseTanksOnTheField()
+    {
+        tanksOnTheField++;
     }
 }

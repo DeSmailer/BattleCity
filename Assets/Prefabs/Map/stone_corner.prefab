@@ -9,8 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7545184605325239769}
-  - component: {fileID: 2591549846437146807}
-  m_Layer: 0
+  - component: {fileID: 4333305470841253277}
+  m_Layer: 10
   m_Name: stone_corner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -34,7 +34,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &2591549846437146807
+--- !u!61 &4333305470841253277
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -47,7 +47,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.04, y: 0.03}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -58,7 +58,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1.75, y: 1.75}
   m_EdgeRadius: 0
 --- !u!1 &9008749982629070448
 GameObject:
@@ -70,7 +70,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6719270211667592066}
   - component: {fileID: 1551525157785751854}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: ground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -209,7 +209,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 9182068638102271316, guid: c58c0a4583c371b4d8abf92390be0dd5, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: c58c0a4583c371b4d8abf92390be0dd5, type: 3}
 --- !u!4 &8166214681292172367 stripped
 Transform:
@@ -283,7 +284,8 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 381252587323279766, guid: 7032f6e2026eb02428237d813cca6531, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 7032f6e2026eb02428237d813cca6531, type: 3}
 --- !u!4 &3270557296951106762 stripped
 Transform:

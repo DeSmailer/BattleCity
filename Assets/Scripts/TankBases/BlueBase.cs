@@ -5,10 +5,12 @@ using UnityEngine;
 public class BlueBase : TankBase
 {
     public GameObject playerPref;
+    public GameObject mobPref;
     private new void Start()
     {
         base.Start();
-        SpawnPlayer();
+        SpawnPlayer(); 
+        SpawnTank();
     }
     public void SpawnPlayer()
     {
@@ -21,6 +23,18 @@ public class BlueBase : TankBase
     }
     public override void SpawnTank()
     {
-        throw new System.NotImplementedException();
+        foreach(Transform spawnPoint in spawnPoints)
+        {
+            if (CheckPositionForSpawn(spawnPoint))
+            {
+                GameObject mob = Instantiate(mobPref, new Vector3(spawnPoint.position.x, spawnPoint.position.y, spawnPoint.position.z - 5), Quaternion.identity);
+                Tank mobTank = mob.GetComponent<Tank>();
+                mobTank.Equip(randomEquipmentManager.GetHull());
+                mobTank.Equip(randomEquipmentManager.GetTower());
+                mobTank.Equip(randomEquipmentManager.GetCannon());
+                ReduceNumberOfAvailableUnits();
+                break;
+            }
+        }
     }
 }

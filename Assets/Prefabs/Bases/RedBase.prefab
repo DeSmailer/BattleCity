@@ -102,7 +102,7 @@ GameObject:
   - component: {fileID: 1542173045580902194}
   - component: {fileID: 1449711147411901582}
   - component: {fileID: 4700698625968016462}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: RedBase
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -228,6 +228,7 @@ MonoBehaviour:
   currentHP: 0
   checkRadius: 0.45
   randomEquipmentManager: {fileID: 0}
+  tanksOnTheField: 0
 --- !u!1 &7545165115221805830
 GameObject:
   m_ObjectHideFlags: 0
@@ -238,7 +239,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1117236770547494769}
   - component: {fileID: 2338059057877054560}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: FlagEnemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}

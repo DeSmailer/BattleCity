@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8282712916439822702}
   - component: {fileID: 1425307404930296135}
   - component: {fileID: 2563849995425768477}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cannon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -122,7 +122,10 @@ GameObject:
   - component: {fileID: 7399421388621247983}
   - component: {fileID: 3718736610036249161}
   - component: {fileID: 4699025786920892312}
-  m_Layer: 0
+  - component: {fileID: 1984190429186735400}
+  - component: {fileID: 6060310780165533489}
+  - component: {fileID: 624383226614464845}
+  m_Layer: 9
   m_Name: Hull
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -243,6 +246,84 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &1984190429186735400
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 462304246328053546}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 373b52eb9bf8c40f785bb6947a1aee66, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 1
+  drawGizmos: 1
+  detailedGizmos: 0
+  startEndModifier:
+    addPoints: 0
+    exactStartPoint: 3
+    exactEndPoint: 3
+    useRaycasting: 0
+    mask:
+      serializedVersion: 2
+      m_Bits: 4294967295
+    useGraphRaycasting: 0
+  traversableTags: -1
+  tagPenalties: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+  graphMask:
+    value: -1
+--- !u!114 &6060310780165533489
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 462304246328053546}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6eb1402c17e84a9282a7f0f62eb584f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 2
+  radius: 1
+  height: 2
+  repathRate: 0.5
+  canSearch: 1
+  canMove: 1
+  maxSpeed: 1
+  gravity: {x: 0, y: 0, z: 0}
+  groundMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  centerOffsetCompatibility: NaN
+  orientation: 1
+  enableRotation: 1
+  targetCompatibility: {fileID: 0}
+  maxAcceleration: -2.5
+  rotationSpeed: 360
+  slowdownDistance: 0.6
+  pickNextWaypointDist: 2
+  endReachedDistance: 0.2
+  alwaysDrawGizmos: 0
+  slowWhenNotFacingTarget: 1
+  whenCloseToDestination: 0
+  constrainInsideGraph: 0
+--- !u!114 &624383226614464845
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 462304246328053546}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9679e68a0f1144e79c664d9a11ca121, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 1
+  target: {fileID: 0}
 --- !u!1 &3236808966907593037
 GameObject:
   m_ObjectHideFlags: 0
@@ -254,9 +335,9 @@ GameObject:
   - component: {fileID: 6653730624246026846}
   - component: {fileID: 1092921525606675338}
   - component: {fileID: 6256214193770958118}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: PlayerTank
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -327,7 +408,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4213940881425722186}
   - component: {fileID: 2718783093972650781}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Trucks
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -408,7 +489,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4124171628774691054}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: FirePoint2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -438,7 +519,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5302324307916389563}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: CentralPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -470,7 +551,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6644806696683707137}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: CannonPosition
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -501,7 +582,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2969993871060715024}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: FirePoint1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -532,7 +613,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2979397330484775930}
   - component: {fileID: 3528006792575987004}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: TowerSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -615,7 +696,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3771617020600458094}
   - component: {fileID: 5862532888876611374}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Tower
   m_TagString: Untagged
   m_Icon: {fileID: 0}

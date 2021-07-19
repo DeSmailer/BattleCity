@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6081708260623259093}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: stone_vertical
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -42,7 +42,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1946875747330077477}
   - component: {fileID: 4202298839156667722}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: ground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -121,6 +121,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6081708260623259093}
     m_Modifications:
+    - target: {fileID: 381252587323279766, guid: 7032f6e2026eb02428237d813cca6531, type: 3}
+      propertyPath: m_Size.x
+      value: 0.76
+      objectReference: {fileID: 0}
+    - target: {fileID: 381252587323279766, guid: 7032f6e2026eb02428237d813cca6531, type: 3}
+      propertyPath: m_Size.y
+      value: 1.61
+      objectReference: {fileID: 0}
     - target: {fileID: 6985822894614456864, guid: 7032f6e2026eb02428237d813cca6531, type: 3}
       propertyPath: m_RootOrder
       value: 1
