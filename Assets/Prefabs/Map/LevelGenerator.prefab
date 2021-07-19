@@ -48,7 +48,10 @@ MonoBehaviour:
   chanceWalkerDestoy: 0.05
   maxWalkers: 10
   percentToFill: 0.7
+  roomSize: 40
   ground: {fileID: 6803985819862611140, guid: 8f03043772eae0f49b8cb0319e4d3836, type: 3}
   vertical: {fileID: 3217887462603616062, guid: ec54c68f1e7459643ad1e9c589000b01, type: 3}
   horizontal: {fileID: 6659565223065758277, guid: 7b6e9392e016388469280fc92ba94038, type: 3}
   corner: {fileID: 7545184605325239768, guid: 2f72ec8ed3a4b2e4a9ba7bed476ee0f3, type: 3}
+  redBase: {fileID: 6875316878572328028, guid: 95cf66db9f4069e4caec54f36125b6ce, type: 3}
+  blueBase: {fileID: 8017414420714679423, guid: 4b790cfb975bedc48bd6966c3fe3b42e, type: 3}

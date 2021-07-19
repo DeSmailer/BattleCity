@@ -15,5 +15,6 @@ MonoBehaviour:
   level: 2
   sprite: {fileID: -3073038717884746042, guid: 5165acff78912c54d8fcd53e691d4564, type: 3}
   moduleType: 0
+  team: 0
   maxHP: 4
-  speed: 666
+  speed: 266

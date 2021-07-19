@@ -11,8 +11,8 @@ public class Tank : MonoBehaviour
     public float pickUpRadius;
 
     public GameObject droppedModule;
-
     public Teams team;
+
     public void PickUp()
     {
         Collider2D[] hitColliders = Physics2D.OverlapCircleAll(transform.position, pickUpRadius);
@@ -22,10 +22,22 @@ public class Tank : MonoBehaviour
             IPickUp equipament = hitCollider.GetComponent(typeof(IPickUp)) as IPickUp;
             if (equipament != null)
             {
-                print("поднял" + equipament.PickUp(team));
-
                 ModuleData module = equipament.PickUp(team);
                 Equip(module);
+            }
+        }
+    }
+
+    public void DestroyModule()
+    {
+        Collider2D[] hitColliders = Physics2D.OverlapCircleAll(transform.position, pickUpRadius);
+
+        foreach (Collider2D hitCollider in hitColliders)
+        {
+            IPickUp equipament = hitCollider.GetComponent(typeof(IPickUp)) as IPickUp;
+            if (equipament != null)
+            {
+                Destroy(hitCollider.gameObject);
             }
         }
     }
@@ -50,7 +62,7 @@ public class Tank : MonoBehaviour
 
     public void Drop()  
     {
-        int rand = Random.Range(0, 1);
+        int rand = Random.Range(0, 3);
         print(rand);
         GameObject drop = Instantiate(droppedModule, transform.position, Quaternion.identity);
         switch (rand)

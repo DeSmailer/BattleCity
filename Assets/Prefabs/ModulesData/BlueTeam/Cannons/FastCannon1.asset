@@ -15,9 +15,10 @@ MonoBehaviour:
   level: 1
   sprite: {fileID: -3843018930717481315, guid: 7bcbaed18b52b684aa0bd4c3c138237c, type: 3}
   moduleType: 2
+  team: 0
   gunsCount: 2
   damage: 1
   shotDistance: 3
   firePoints:
-  - {x: -0.6, y: 0.06}
-  - {x: -0.6, y: -0.06}
+  - {x: -0.3, y: 0.06}
+  - {x: -0.3, y: -0.06}

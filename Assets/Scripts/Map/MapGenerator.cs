@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MapGenerator : MonoBehaviour
 {
-    public enum gridSpace { empty, wall, ground, vertical, horizontal, corner };
+    public enum gridSpace { empty, wall, ground, vertical, horizontal, corner, redBase, blueBase };
     public gridSpace[,] grid;
     private int roomHeight, roomWidth;
     private Vector2 roomSizeWorldUnits;
@@ -13,22 +13,24 @@ public class MapGenerator : MonoBehaviour
     List<walker> walkers;
 
     [SerializeField]
-    [Range(0f,1f)]
+    [Range(0f, 1f)]
     private float chanceWalkerChangeDir;
     [SerializeField]
-    [Range(0f,1f)]
+    [Range(0f, 1f)]
     private float chanceWalkerSpawn;
     [SerializeField]
-    [Range(0f,1f)]
+    [Range(0f, 1f)]
     private float chanceWalkerDestoy;
     [SerializeField]
-    [Range(0f,1f)]
+    [Range(0f, 1f)]
     private int maxWalkers;
     [SerializeField]
-    [Range(0f,1f)]
+    [Range(0f, 1f)]
     private float percentToFill;
+    [SerializeField]
+    private int roomSize;
 
-    public GameObject ground, vertical, horizontal, corner;
+    public GameObject ground, vertical, horizontal, corner, redBase, blueBase;
 
     struct walker
     {
@@ -46,13 +48,14 @@ public class MapGenerator : MonoBehaviour
 
         Setup();
         CreateGrounds();
+        CreateBase();
         CreateWalls();
         SpawnMap();
 
     }
-    void Setup()
+    private void Setup()
     {
-        float hw = 40;
+        float hw = roomSize + 2;
 
         roomSizeWorldUnits = new Vector2(hw, hw);
 
@@ -77,7 +80,7 @@ public class MapGenerator : MonoBehaviour
 
         walkers.Add(newWalker);
     }
-    void CreateGrounds()
+    private void CreateGrounds()
     {
         int iterations = 0;//цикл не будет работать вечно
         do
@@ -139,7 +142,36 @@ public class MapGenerator : MonoBehaviour
         } while (iterations < 100000);
 
     }
-    void CreateWalls()
+
+    private void CreateBase()
+    {
+        int border = 2;
+        int blueX = (int)Random.Range(border + 1, roomSize - border);
+        int blueY = (int)Random.Range(border + 1, 6);
+
+        int redX = roomSize - blueX;
+        int redY = roomSize - blueY;
+
+        grid[blueX, blueY] = gridSpace.blueBase;
+        grid[redX, redY] = gridSpace.redBase;
+
+        Surround(blueX, blueY, gridSpace.ground);
+        Surround(redX, redY, gridSpace.ground);
+    }
+
+   private void Surround(int x, int y, gridSpace gridSpace)
+    {
+        grid[x-1, y+1] = gridSpace;
+        grid[x, y+1] = gridSpace;
+        grid[x+1, y+1] = gridSpace;
+        grid[x+1, y] = gridSpace;
+        grid[x+1, y-1] = gridSpace;
+        grid[x, y-1] = gridSpace;
+        grid[x-1, y-1] = gridSpace;
+        grid[x-1, y] = gridSpace;
+    }
+
+    private void CreateWalls()
     {
         //левая стенка
         for (int x = 0, y = 0; y < roomWidth; y++)
@@ -241,7 +273,7 @@ public class MapGenerator : MonoBehaviour
         return false;
     }
 
-    void SpawnMap()
+    private void SpawnMap()
     {
         for (int x = 0; x < roomWidth; x++)
         {
@@ -266,6 +298,14 @@ public class MapGenerator : MonoBehaviour
 
                     case gridSpace.corner:
                         Spawn(x, y, corner);
+                        break;
+
+                    case gridSpace.redBase:
+                        Spawn(x, y, redBase);
+                        break;
+
+                    case gridSpace.blueBase:
+                        Spawn(x, y, blueBase);
                         break;
                 }
             }
@@ -305,5 +345,16 @@ public class MapGenerator : MonoBehaviour
             }
         }
         return count;
+    }
+    void OnDrawGizmos()
+    {
+        // Green
+        Gizmos.color = new Color(0.0f, 1.0f, 0.0f);
+        DrawRect(new Rect(new Vector2(0, 0), new Vector2(41, 41)));
+    }
+
+    void DrawRect(Rect rect)
+    {
+        Gizmos.DrawWireCube(new Vector3(rect.center.x, rect.center.y, 0.01f), new Vector3(rect.size.x, rect.size.y, 0.01f));
     }
 }
