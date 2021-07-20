@@ -9,7 +9,8 @@ public abstract class TankBase : MonoBehaviour, IAttacable
     [SerializeField]
     private int unitsLeft;
 
-    public Transform[] spawnPoints;
+    public Vector3[] spawnPoints;
+    public GameObject[] mobTanksPref;
 
     [SerializeField]
     private float maxHP;
@@ -26,8 +27,40 @@ public abstract class TankBase : MonoBehaviour, IAttacable
     public void Start()
     {
         currentHP = maxHP;
+        spawnPoints = new Vector3[] {
+            new Vector3(transform.position.x+1,transform.position.y,transform.position.z+1),
+            new Vector3(transform.position.x-1,transform.position.y,transform.position.z+1),
+            new Vector3(transform.position.x,transform.position.y+1,transform.position.z+1),
+            new Vector3(transform.position.x,transform.position.y-1,transform.position.z+1),
+        };
     }
-    public abstract void SpawnTank();
+    public void SpawnTank()
+    {
+        if (unitsLeft > 0 && tanksOnTheField < 2)
+        {
+            foreach (Vector3 spawnPoint in spawnPoints)
+            {
+                if (CheckPositionForSpawn(spawnPoint))
+                {
+                    int rand = Random.Range(0, mobTanksPref.Length);
+
+                    GameObject mob = Instantiate(mobTanksPref[rand], new Vector3(spawnPoint.x, spawnPoint.y, spawnPoint.z - 5), Quaternion.identity);
+                    Tank mobTank = mob.GetComponent<Tank>();
+                    mobTank.team = team;
+                    mobTank.Equip(randomEquipmentManager.GetHull());
+                    mobTank.Equip(randomEquipmentManager.GetTower());
+                    mobTank.Equip(randomEquipmentManager.GetCannon());
+
+                    mobTank.Notify += ReduceTanksOnTheField;
+                    mobTank.Notify += SpawnTank;
+
+                    ReduceNumberOfAvailableUnits();
+                    IncreaseTanksOnTheField();
+                    break;
+                }
+            }
+        }
+    }
 
     public void TakeDamage(float damage)
     {
@@ -38,9 +71,9 @@ public abstract class TankBase : MonoBehaviour, IAttacable
         }
     }
 
-    public bool CheckPositionForSpawn(Transform spawnPoint)
+    public bool CheckPositionForSpawn(Vector3 spawnPoint)
     {
-        Collider2D[] hitColliders = Physics2D.OverlapCircleAll(spawnPoint.position, checkRadius);
+        Collider2D[] hitColliders = Physics2D.OverlapCircleAll(spawnPoint, checkRadius);
 
         if (hitColliders.Length <= 0)
         {
@@ -52,15 +85,14 @@ public abstract class TankBase : MonoBehaviour, IAttacable
     public void ReduceNumberOfAvailableUnits()
     {
         unitsLeft--;
-        IncreaseTanksOnTheField();
     }
 
     private void OnDrawGizmos()
     {
-        foreach (Transform spawnPoint in spawnPoints)
+        foreach (Vector3 spawnPoint in spawnPoints)
         {
             Gizmos.color = Color.green;
-            Gizmos.DrawWireSphere(spawnPoint.position, checkRadius);
+            Gizmos.DrawWireSphere(spawnPoint, checkRadius);
         }
     }
 
@@ -75,10 +107,12 @@ public abstract class TankBase : MonoBehaviour, IAttacable
     }
     public void ReduceTanksOnTheField()
     {
+        print("-1 на поле");
         tanksOnTheField--;
     }
     public void IncreaseTanksOnTheField()
     {
+        print("+1 на поле");
         tanksOnTheField++;
     }
 }

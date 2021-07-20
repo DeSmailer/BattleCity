@@ -20,4 +20,4 @@ MonoBehaviour:
   damage: 2
   shotDistance: 4
   firePoints:
-  - {x: -0.3, y: 0}
+  - {x: 0.5, y: 0}

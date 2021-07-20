@@ -38,10 +38,13 @@ public class Cannon : Module
 
             for (int i = 0; i < gunsCount; i++)
             {
-                firePoints[i].position = centralFirePoint.transform.position + (Vector3)cannonData.FirePoints[i];
+                //firePoints[i].position = centralFirePoint.transform.position + (Vector3)cannonData.FirePoints[i];
+                firePoints[i].localPosition = (Vector3)cannonData.FirePoints[i];
             }
 
             spriteRenderer.sprite = cannonData.Sprite;
+            team = cannonData.Team;
+
         }
         else
         {
@@ -49,7 +52,7 @@ public class Cannon : Module
         }
     }
 
-    public void Shoot()
+    public virtual void Shoot()
     {
         for (int i = 0; i < gunsCount; i++)
         {

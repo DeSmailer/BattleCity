@@ -13,12 +13,12 @@ MonoBehaviour:
   m_Name: FastCannon2
   m_EditorClassIdentifier: 
   level: 1
-  sprite: {fileID: -3843018930717481315, guid: 7bcbaed18b52b684aa0bd4c3c138237c, type: 3}
+  sprite: {fileID: -6672136476759780618, guid: 4bd3e1c227930074fbd654e863ffc2ed, type: 3}
   moduleType: 2
   team: 1
   gunsCount: 2
   damage: 1
   shotDistance: 3
   firePoints:
-  - {x: -0.6, y: 0.06}
-  - {x: -0.6, y: -0.06}
+  - {x: 0.5, y: 0.07}
+  - {x: 0.5, y: -0.07}

@@ -13,11 +13,11 @@ MonoBehaviour:
   m_Name: PoweredCannon3
   m_EditorClassIdentifier: 
   level: 1
-  sprite: {fileID: 5432878961293836695, guid: dc9818bb4054d5d46bc862c3d8d5a56f, type: 3}
+  sprite: {fileID: -1808614936713009756, guid: 549a28418d4d9ae4fb02df33b5180805, type: 3}
   moduleType: 2
   team: 1
   gunsCount: 1
   damage: 2
   shotDistance: 3
   firePoints:
-  - {x: -0.6, y: 0}
+  - {x: -0.15, y: 0}

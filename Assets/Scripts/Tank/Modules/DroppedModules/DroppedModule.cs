@@ -19,6 +19,7 @@ public class DroppedModule : MonoBehaviour, IPickUp
     {
         print(name);
         moduleType.ToString();
+        Destroy(gameObject, Time.deltaTime);
         return (ModuleData)AssetDatabase.LoadAssetAtPath($"Assets/Prefabs/ModulesData/{team}Team/{moduleType}s/{name}.asset", typeof(ModuleData));
     }
 }

@@ -4,11 +4,7 @@ using UnityEngine;
 
 public class Player : Tank
 {
-    Camera mainCamera;
-    private void Awake()
-    {
-        mainCamera = Camera.main;
-    }
+    
     private void Update()
     {
         hull.Move();
@@ -17,14 +13,10 @@ public class Player : Tank
         {
             PickUp();
         }
-        if (Input.GetKeyDown(KeyCode.X))
-        {
-            Drop();
-        } if (Input.GetKeyDown(KeyCode.M))
+        if (Input.GetKeyDown(KeyCode.M))
         {
             DestroyModule();
         }
-        Vector3 p = new Vector3(transform.position.x, transform.position.y, -10);
-        mainCamera.transform.position = p;
+
     }
 }

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: HullData2
   m_EditorClassIdentifier: 
   level: 2
-  sprite: {fileID: -3073038717884746042, guid: 5165acff78912c54d8fcd53e691d4564, type: 3}
+  sprite: {fileID: 8779777167921824003, guid: e943b438a4b2ce8449360760e893a71a, type: 3}
   moduleType: 0
   team: 1
   maxHP: 4

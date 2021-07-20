@@ -18,6 +18,7 @@ public abstract class Tower : Module
 
             shotAccuracy = towerData.ShotAccuracy;
             spriteRenderer.sprite = towerData.Sprite;
+            team = towerData.Team;
         }
         else
         {

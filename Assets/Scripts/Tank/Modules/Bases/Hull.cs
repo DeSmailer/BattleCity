@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
@@ -17,7 +18,12 @@ public abstract class Hull : Module, IAttacable
 
     public SpriteRenderer spriteRenderer;
 
-    public abstract void Dead();
+    public Transform target;
+
+    public virtual void Dead()
+    {
+        transform.parent.gameObject.GetComponent<Tank>().Dead();
+    }
 
     public override void Equip(ModuleData moduleData)
     {
@@ -29,11 +35,18 @@ public abstract class Hull : Module, IAttacable
             speed = hullData.Speed;
             maxHP = currentHP = hullData.MaxHP;
             spriteRenderer.sprite = hullData.Sprite;
+            team = hullData.Team;
         }
         else
         {
             print("ошибочка");
         }
+    }
+
+    public void SetTarget(Transform target)
+    {
+
+        this.target = target;
     }
 
     public Teams GetTeam()

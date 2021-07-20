@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Miner
   - Zombie
+  - Tank
+  - Base
   layers:
   - Default
   - TransparentFX

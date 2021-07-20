@@ -21,6 +21,5 @@ public class PlayerHull : Hull
     }
     public override void Dead()
     {
-        throw new System.NotImplementedException();
     }
 }

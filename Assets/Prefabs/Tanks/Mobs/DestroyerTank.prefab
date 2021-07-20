@@ -554,7 +554,8 @@ MonoBehaviour:
   maxHP: 0
   currentHP: 0
   spriteRenderer: {fileID: 3186119852989113905}
-  aiPath: {fileID: 0}
+  target: {fileID: 0}
+  nextWayPointDistance: 1.5
 --- !u!58 &8684068527291164094
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -570,7 +571,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.5749999
+  m_Radius: 0.43
 --- !u!114 &1906693445421073236
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -611,8 +612,8 @@ GameObject:
   - component: {fileID: 5020827467521712212}
   - component: {fileID: 7688265935519759911}
   m_Layer: 9
-  m_Name: MobTank
-  m_TagString: Untagged
+  m_Name: DestroyerTank
+  m_TagString: Tank
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -647,7 +648,7 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 0
+  m_LinearDrag: 3
   m_AngularDrag: 0.05
   m_GravityScale: 0
   m_Material: {fileID: 0}
@@ -673,3 +674,7 @@ MonoBehaviour:
   pickUpRadius: 1.43
   droppedModule: {fileID: 8770329387507761110, guid: a69aaa73621e40f44a56f8cbaa9ad7d7, type: 3}
   team: 0
+  target: {fileID: 0}
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 640

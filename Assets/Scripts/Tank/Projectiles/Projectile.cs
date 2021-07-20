@@ -32,18 +32,22 @@ public class Projectile : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        print(collision.gameObject.name);
 
         IAttacable target = collision.GetComponent(typeof(IAttacable)) as IAttacable;
+
         if (target != null)
         {
-            if (this.team != target.GetTeam())
+            if (team != target.GetTeam())
             {
-                target.TakeDamage(damage);
+                float currentShotAccuracy = Random.Range(0f, 1f);
+                if (shotAccuracy >= currentShotAccuracy)
+                {
+                    target.TakeDamage(damage);
+                }
                 Destroy(gameObject);
             }
         }
-        else
+        else if (collision.GetComponent<Projectile>() == null)
         {
             Destroy(gameObject);
         }

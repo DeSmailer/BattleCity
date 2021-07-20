@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: TowerData1
   m_EditorClassIdentifier: 
   level: 1
-  sprite: {fileID: -273845475834698218, guid: 3d57a0775b5ce6e44b66c3d93c18a3bd, type: 3}
+  sprite: {fileID: -8337643774976530322, guid: 215efb449fc377e45b6eb2cdbcf11b76, type: 3}
   moduleType: 1
   team: 1
   shotAccuracy: 0.7

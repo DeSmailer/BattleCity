@@ -5,17 +5,14 @@ using UnityEngine;
 
 public class MobHull : Hull
 {
-    public Transform target;
     public float nextWayPointDistance = 1.5f;
 
     Path path;
     private int currentWaypoint = 0;
-    private bool reachedEndOfPath = false;
 
-   private Seeker seeker;
+    private Seeker seeker;
     private void Start()
     {
-        target= GameObject.FindGameObjectWithTag("Player").transform;
         seeker = GetComponent<Seeker>();
 
         InvokeRepeating("UpdatePath", 0.1f, 0.7f);
@@ -23,8 +20,7 @@ public class MobHull : Hull
 
     private void UpdatePath()
     {
-
-        if (seeker.IsDone())
+        if (seeker.IsDone() && target!=null)
         {
             seeker.StartPath(rb2d.position, target.position, OnPathComplite);
         }
@@ -39,16 +35,6 @@ public class MobHull : Hull
         }
     }
 
-    private void Update()
-    {
-        Move();
-    }
-
-    public override void Dead()
-    {
-        throw new System.NotImplementedException();
-    }
-
     public override void Move()
     {
         if (path == null)
@@ -56,17 +42,11 @@ public class MobHull : Hull
 
         if (currentWaypoint >= path.vectorPath.Count)
         {
-            reachedEndOfPath = true;
             return;
         }
-        else
-        {
-            reachedEndOfPath = false;
 
-        }
 
         moveDir = ((Vector2)path.vectorPath[currentWaypoint] - rb2d.position).normalized;
-        //new Vector3(goHorizontal, goVertical).normalized;
 
         rb2d.velocity = moveDir * speed * Time.deltaTime;
 
@@ -83,4 +63,5 @@ public class MobHull : Hull
             currentWaypoint++;
         }
     }
+
 }

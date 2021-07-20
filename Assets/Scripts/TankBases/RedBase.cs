@@ -4,8 +4,13 @@ using UnityEngine;
 
 public class RedBase : TankBase
 {
-    public override void SpawnTank()
+    private new void Start()
     {
-        throw new System.NotImplementedException();
+        base.Start();
+        SpawnTank();
+        SpawnTank();
+        SpawnTank();
+        SpawnTank();
+        SpawnTank();
     }
 }

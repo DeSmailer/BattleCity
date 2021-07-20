@@ -13,6 +13,12 @@ public class Tank : MonoBehaviour
     public GameObject droppedModule;
     public Teams team;
 
+    public Transform target;
+
+    private bool isAlive = true;
+
+    public delegate void IsDead();
+    public event IsDead Notify;
     public void PickUp()
     {
         Collider2D[] hitColliders = Physics2D.OverlapCircleAll(transform.position, pickUpRadius);
@@ -26,6 +32,11 @@ public class Tank : MonoBehaviour
                 Equip(module);
             }
         }
+    }
+
+    public Teams GetTeam()
+    {
+        return team;
     }
 
     public void DestroyModule()
@@ -63,7 +74,6 @@ public class Tank : MonoBehaviour
     public void Drop()  
     {
         int rand = Random.Range(0, 3);
-        print(rand);
         GameObject drop = Instantiate(droppedModule, transform.position, Quaternion.identity);
         switch (rand)
         {
@@ -78,6 +88,18 @@ public class Tank : MonoBehaviour
             case 2:
                 drop.GetComponent<DroppedModule>().Drop(cannon.moduleData);
                 break;
+        }
+
+    }
+
+    public void Dead()
+    {
+        if (isAlive==true) //дропалось 2 одинаковых модуля с одного танка, пришлось ввести переменную
+        {
+            Drop();
+            isAlive = false;
+            Notify?.Invoke();
+            Destroy(gameObject);
         }
     }
 

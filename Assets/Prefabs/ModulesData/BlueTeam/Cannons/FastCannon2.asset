@@ -18,7 +18,7 @@ MonoBehaviour:
   team: 0
   gunsCount: 2
   damage: 2
-  shotDistance: 3
+  shotDistance: 4
   firePoints:
-  - {x: -0.2, y: 0.07}
-  - {x: -0.2, y: -0.07}
+  - {x: 0.5, y: 0.07}
+  - {x: 0.5, y: -0.07}

@@ -220,6 +220,7 @@ MonoBehaviour:
   maxHP: 0
   currentHP: 0
   spriteRenderer: {fileID: 7399421388621247983}
+  target: {fileID: 0}
 --- !u!61 &4699025786920892312
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -335,9 +336,10 @@ GameObject:
   - component: {fileID: 6653730624246026846}
   - component: {fileID: 1092921525606675338}
   - component: {fileID: 6256214193770958118}
+  - component: {fileID: 6306206008341941798}
   m_Layer: 9
   m_Name: PlayerTank
-  m_TagString: Player
+  m_TagString: Tank
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -398,6 +400,25 @@ MonoBehaviour:
   pickUpRadius: 1.43
   droppedModule: {fileID: 8770329387507761110, guid: a69aaa73621e40f44a56f8cbaa9ad7d7, type: 3}
   team: 0
+  target: {fileID: 0}
+--- !u!114 &6306206008341941798
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3236808966907593037}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8754042b2616c62449307203bbdc5511, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  leftLimit: 7.7
+  rightLimit: 33.35
+  bottomLimit: 4.5
+  upperLimit: 36.5
+  smooth: 5
+  z: -5
 --- !u!1 &4921168953022616990
 GameObject:
   m_ObjectHideFlags: 0
@@ -534,7 +555,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5137090334931711220}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1, y: 0, z: 0}
+  m_LocalPosition: {x: -1.084, y: -0.008, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2969993871060715024}
@@ -597,7 +618,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6843027850711283190}
   m_LocalRotation: {x: -0, y: -0, z: 0.9999988, w: 0.0015852454}
-  m_LocalPosition: {x: 0.357, y: -0.06, z: 0}
+  m_LocalPosition: {x: 0.425, y: -0.047, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 5302324307916389563}

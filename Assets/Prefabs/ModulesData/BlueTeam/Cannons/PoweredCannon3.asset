@@ -17,7 +17,7 @@ MonoBehaviour:
   moduleType: 2
   team: 0
   gunsCount: 1
-  damage: 2
+  damage: 6
   shotDistance: 8
   firePoints:
-  - {x: 0.15, y: 0}
+  - {x: -0.15, y: 0}
