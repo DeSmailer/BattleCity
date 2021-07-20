@@ -4,21 +4,20 @@ using UnityEngine;
 
 public class DestroyerTank : MobTank
 {
-
-    private const string targetTag = "Tank";
+    public LayerMask layerMaskForRaycast;
+    private readonly string targetTag = "Tank";
 
     public override void SearchTarget()
     {
         GameObject[] tanks = GameObject.FindGameObjectsWithTag(targetTag);
-        print(tanks);
 
-        foreach (GameObject tank in tanks)
+        foreach (GameObject item in tanks)
         {
-            Teams targetTeam = tank.GetComponent<Tank>().GetTeam();
+            Teams targetTeam = item.GetComponent<Tank>().GetTeam();
 
             if (targetTeam != team)
             {
-                target = tank.transform;
+                target = item.transform;
                 hull.SetTarget(target);
                 break;
             }
@@ -32,9 +31,17 @@ public class DestroyerTank : MobTank
         }
         else
         {
-            if (Vector3.Distance(transform.position, target.transform.position) > cannon.shotDistance)
+            if (Vector2.Distance(transform.position, target.transform.position) > cannon.shotDistance)
             {
                 hull.Move();
+            }
+            else
+            {
+                Vector2 dir = (target.position - transform.position) * 10;
+                if (Physics2D.Raycast(transform.position, dir, Mathf.Infinity))
+                {
+                    hull.Move();
+                }
             }
 
             tower.LookAt(target.position);

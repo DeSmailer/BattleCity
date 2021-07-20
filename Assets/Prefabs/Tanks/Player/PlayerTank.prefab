@@ -221,6 +221,7 @@ MonoBehaviour:
   currentHP: 0
   spriteRenderer: {fileID: 7399421388621247983}
   target: {fileID: 0}
+  slider: {fileID: 0}
 --- !u!61 &4699025786920892312
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -418,7 +419,6 @@ MonoBehaviour:
   bottomLimit: 4.5
   upperLimit: 36.5
   smooth: 5
-  z: -5
 --- !u!1 &4921168953022616990
 GameObject:
   m_ObjectHideFlags: 0

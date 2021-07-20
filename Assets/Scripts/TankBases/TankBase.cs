@@ -96,7 +96,7 @@ public abstract class TankBase : MonoBehaviour, IAttacable
         }
     }
 
-    public void Dead()
+    public virtual void Dead()
     {
         Destroy(gameObject);
     }
@@ -107,12 +107,10 @@ public abstract class TankBase : MonoBehaviour, IAttacable
     }
     public void ReduceTanksOnTheField()
     {
-        print("-1 на поле");
         tanksOnTheField--;
     }
     public void IncreaseTanksOnTheField()
     {
-        print("+1 на поле");
         tanksOnTheField++;
     }
 }

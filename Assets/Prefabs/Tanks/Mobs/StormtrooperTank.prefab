@@ -675,3 +675,6 @@ MonoBehaviour:
   droppedModule: {fileID: 8770329387507761110, guid: a69aaa73621e40f44a56f8cbaa9ad7d7, type: 3}
   team: 0
   target: {fileID: 0}
+  layerMaskForRaycast:
+    serializedVersion: 2
+    m_Bits: 1024

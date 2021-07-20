@@ -21,4 +21,10 @@ public class BlueBase : TankBase
         ReduceNumberOfAvailableUnits();
         IncreaseTanksOnTheField();
     }
+    
+    public override void Dead()
+    {
+        ResultGame.Lose();
+        base.Dead();
+    }
 }

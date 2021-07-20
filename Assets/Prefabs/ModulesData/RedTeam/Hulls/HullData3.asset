@@ -17,4 +17,4 @@ MonoBehaviour:
   moduleType: 0
   team: 1
   maxHP: 6
-  speed: 200
+  speed: 100

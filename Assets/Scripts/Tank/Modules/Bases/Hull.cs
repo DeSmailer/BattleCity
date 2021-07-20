@@ -56,7 +56,7 @@ public abstract class Hull : Module, IAttacable
 
     public abstract void Move();
 
-    public void TakeDamage(float damage)
+    public virtual void TakeDamage(float damage)
     {
         currentHP -= damage;
         if (currentHP <= 0)

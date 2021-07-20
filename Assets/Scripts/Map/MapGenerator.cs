@@ -33,7 +33,7 @@ public class MapGenerator : MonoBehaviour
 
     public GameObject ground, vertical, horizontal, corner, redBase, blueBase;
 
-    struct walker
+    private struct walker
     {
         public Vector2 dir;
         public Vector2 pos;

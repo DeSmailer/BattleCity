@@ -8,4 +8,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/LoseScene.unity
+    guid: d5918d5ff371a374b99861c4535b63d7
+  - enabled: 1
+    path: Assets/Scenes/WinScene.unity
+    guid: d8f18d3f88f7e684da6f4998fa8119a1
   m_configObjects: {}

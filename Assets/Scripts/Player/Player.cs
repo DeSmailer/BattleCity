@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Player : Tank
 {
-    
     private void Update()
     {
         hull.Move();

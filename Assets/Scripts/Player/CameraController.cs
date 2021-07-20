@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
-    Camera mainCamera;
+    private Camera mainCamera;
 
     [SerializeField]
     private float leftLimit;

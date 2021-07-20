@@ -4,20 +4,20 @@ using UnityEngine;
 
 public class StormtrooperTank : MobTank
 {
-    private const string targetTag = "Base";
+    public LayerMask layerMaskForRaycast;
+    private readonly string targetTag = "Base";
 
     public override void SearchTarget()
     {
-        GameObject[] tanks = GameObject.FindGameObjectsWithTag(targetTag);
-        print(tanks);
+        GameObject[] bases = GameObject.FindGameObjectsWithTag(targetTag);
 
-        foreach (GameObject tank in tanks)
+        foreach (GameObject item in bases)
         {
-            Teams targetTeam = tank.GetComponent<TankBase>().GetTeam();
+            Teams targetTeam = item.GetComponent<TankBase>().GetTeam();
 
             if (targetTeam != team)
             {
-                target = tank.transform;
+                target = item.transform;
                 hull.SetTarget(target);
                 break;
             }
@@ -32,9 +32,17 @@ public class StormtrooperTank : MobTank
         }
         else
         {
-            if (Vector3.Distance(transform.position, target.transform.position) > cannon.shotDistance)
+            if (Vector2.Distance(transform.position, target.transform.position) > cannon.shotDistance)
             {
                 hull.Move();
+            }
+            else
+            {
+                Vector2 dir = (target.position - transform.position) * 10;
+                if (Physics2D.Raycast(transform.position, dir, Mathf.Infinity))
+                {
+                    hull.Move();
+                }
             }
 
             tower.LookAt(target.position);

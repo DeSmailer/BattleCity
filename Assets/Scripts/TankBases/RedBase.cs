@@ -9,8 +9,10 @@ public class RedBase : TankBase
         base.Start();
         SpawnTank();
         SpawnTank();
-        SpawnTank();
-        SpawnTank();
-        SpawnTank();
+    }
+    public override void Dead()
+    {
+        ResultGame.Win();
+        base.Dead();
     }
 }

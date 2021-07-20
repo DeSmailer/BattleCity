@@ -8,9 +8,11 @@ public abstract class Tank : MonoBehaviour
     public Tower tower;
     public Cannon cannon;
 
-    public float pickUpRadius;
+    [SerializeField]
+    private float pickUpRadius;
 
     public GameObject droppedModule;
+
     public Teams team;
 
     public Transform target;
@@ -19,6 +21,7 @@ public abstract class Tank : MonoBehaviour
 
     public delegate void IsDead();
     public event IsDead Notify;
+
     public void PickUp()
     {
         Collider2D[] hitColliders = Physics2D.OverlapCircleAll(transform.position, pickUpRadius);
