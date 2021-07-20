@@ -2,10 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DestroyerTank : MobTank
+public class StormtrooperTank : MobTank
 {
-
-    private const string targetTag = "Tank";
+    private const string targetTag = "Base";
 
     public override void SearchTarget()
     {
@@ -14,7 +13,7 @@ public class DestroyerTank : MobTank
 
         foreach (GameObject tank in tanks)
         {
-            Teams targetTeam = tank.GetComponent<Tank>().GetTeam();
+            Teams targetTeam = tank.GetComponent<TankBase>().GetTeam();
 
             if (targetTeam != team)
             {
@@ -24,6 +23,7 @@ public class DestroyerTank : MobTank
             }
         }
     }
+
     private void Update()
     {
         if (target == null)

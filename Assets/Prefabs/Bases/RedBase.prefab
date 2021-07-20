@@ -96,7 +96,7 @@ GameObject:
   - component: {fileID: 6608010326303326332}
   m_Layer: 7
   m_Name: RedBase
-  m_TagString: Untagged
+  m_TagString: Base
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -134,6 +134,7 @@ MonoBehaviour:
   spawnPoints: []
   mobTanksPref:
   - {fileID: 7380323606072234643, guid: 45d9082d8359dd04094306d5fb81aaa1, type: 3}
+  - {fileID: 7380323606072234643, guid: fbbe6fd4f2dc96e4b9bb5c904e919106, type: 3}
   maxHP: 10
   currentHP: 0
   checkRadius: 0.45

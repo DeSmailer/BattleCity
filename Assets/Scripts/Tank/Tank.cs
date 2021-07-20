@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Tank : MonoBehaviour
+public abstract class Tank : MonoBehaviour
 {
     public Hull hull;
     public Tower tower;
@@ -30,6 +30,7 @@ public class Tank : MonoBehaviour
             {
                 ModuleData module = equipament.PickUp(team);
                 Equip(module);
+                break;
             }
         }
     }
@@ -49,6 +50,7 @@ public class Tank : MonoBehaviour
             if (equipament != null)
             {
                 Destroy(hitCollider.gameObject);
+                break;
             }
         }
     }
